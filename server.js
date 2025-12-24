@@ -24,14 +24,14 @@ app.use(express.json({ limit: "10mb" }));
 app.set("trust proxy", 1);
 
 /* ================== ENV CHECK ================== */
-if (!process.env.MONGO_URI) {
-  console.error("❌ MONGO_URI missing in .env");
+if (!process.env.MONGO_URL) {
+  console.error("❌ MONGO_URL missing in .env");
   process.exit(1);
 }
 
 /* ================== DATABASE ================== */
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch(err => {
     console.error("❌ MongoDB Error:", err);
