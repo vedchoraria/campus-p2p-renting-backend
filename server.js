@@ -6,6 +6,13 @@ require("dotenv").config();
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Campus P2P Renting Backend is LIVE 🚀");
+});
+
+
+
+
 /* ================== GLOBAL SERVER SETUP ================== */
 app.use(cors({
   origin: "*",               // allow all origins (global access)
